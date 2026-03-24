@@ -1,3 +1,5 @@
+cmake_minimum_required(VERSION 3.22)
+
 set(H2COMMON_LIBRARY_NAME "H2Common")
 file(GLOB H2COMMON_SOURCE_FILES
 	${CMAKE_CURRENT_SOURCE_DIR}/*.c
@@ -9,6 +11,8 @@ target_include_directories(${H2COMMON_LIBRARY_NAME} PRIVATE
 	${CMAKE_CURRENT_SOURCE_DIR}/../game
 	${CMAKE_CURRENT_SOURCE_DIR}/../qcommon
 )
+
+message(STATUS "Building Heretic II common shared library ${H2COMMON_LIBRARY_NAME}${CMAKE_SHARED_LIBRARY_SUFFIX}")
 
 if(WIN32)
 	set(H2COMMON_INSTALL_DEST ${CMAKE_INSTALL_BINDIR})

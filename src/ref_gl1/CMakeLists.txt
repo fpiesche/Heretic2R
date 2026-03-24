@@ -1,3 +1,5 @@
+cmake_minimum_required(VERSION 3.22)
+
 set(REFGL1_LIBRARY_NAME "ref_gl1")
 file(GLOB REFGL1_SOURCE_FILES
     ${CMAKE_CURRENT_SOURCE_DIR}/../../include/glad-GL1.3/glad.c
@@ -17,6 +19,8 @@ target_include_directories(${REFGL1_LIBRARY_NAME} PRIVATE
 	${CMAKE_CURRENT_SOURCE_DIR}/../game
 	${CMAKE_CURRENT_SOURCE_DIR}/../qcommon
 )
+
+message(STATUS "Building GL renderer shared library ${REFGL1_LIBRARY_NAME}${CMAKE_SHARED_LIBRARY_SUFFIX}")
 
 if(WIN32)
 	set(REFGL1_INSTALL_DEST ${CMAKE_INSTALL_BINDIR})
