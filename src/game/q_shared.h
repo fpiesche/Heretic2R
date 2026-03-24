@@ -6,7 +6,9 @@
 
 #pragma once
 
-#include <direct.h>
+#ifdef WIN32
+	#include <direct.h>
+#endif
 #include <assert.h>
 #include <math.h>
 #include <stdio.h>

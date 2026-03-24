@@ -7,7 +7,7 @@
 #pragma once
 
 #include "q_shared.h"
-#include "q_clientserver.h"
+#include "q_ClientServer.h"
 
 // Forward define 'playerinfo_t' for use in 'panimframe_t' and 'panimmove_t'.
 typedef struct playerinfo_s playerinfo_t;
