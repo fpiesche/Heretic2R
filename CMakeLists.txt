@@ -13,12 +13,11 @@ set(CMAKE_C_STANDARD 99)
 
 option(BUILD_CLIENTFX "Build client effects dynamic library" ON)
 option(BUILD_GAME_CODE "Build compiled game code dynamic library" ON)
+option(BUILD_H2COMMON "Build H2Common dynamic library" ON)
+option(BUILD_LAUNCHER "Build Heretic2R launcher" ON)
 option(BUILD_PLAYER "Build player dynamic library" ON)
 option(BUILD_REFGL1 "Build ref_gl1 renderer dynamic library" ON)
-option(BUILD_SNDSL3 "Build SDL3 audio dynamic library" ON)
-
-# This is used to add the platform suffix to the `game` library name
-option(H2R_BUILD_ARCH "Target architecture to build (default: host architecture)" ${CMAKE_SYSTEM_PROCESSOR})
+option(BUILD_SNDSDL3 "Build SDL3 audio dynamic library" ON)
 
 find_package(SDL3 REQUIRED)
 
