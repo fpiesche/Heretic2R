@@ -193,7 +193,7 @@
     <Midl>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <TypeLibraryName>.\debug\client_effects.tlb</TypeLibraryName>
+      <TypeLibraryName>.\debug\clientfx.tlb</TypeLibraryName>
       <MkTypLibCompatible>true</MkTypLibCompatible>
       <TargetEnvironment>Win32</TargetEnvironment>
     </Midl>
@@ -203,14 +203,14 @@
     </ResourceCompile>
     <Bscmake>
       <SuppressStartupBanner>true</SuppressStartupBanner>
-      <OutputFile>.\debug\client_effects.bsc</OutputFile>
+      <OutputFile>.\debug\clientfx.bsc</OutputFile>
     </Bscmake>
     <Link>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <LinkDLL>true</LinkDLL>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
-      <OutputFile>..\..\build\base\client_effects.dll</OutputFile>
+      <OutputFile>..\..\build\base\clientfx.dll</OutputFile>
       <AdditionalDependencies>H2Common.lib;quake2.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(SolutionDir)..\build\</AdditionalLibraryDirectories>
     </Link>
@@ -235,7 +235,7 @@
     <Midl>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <TypeLibraryName>.\..\release\client_effects.tlb</TypeLibraryName>
+      <TypeLibraryName>.\..\release\clientfx.tlb</TypeLibraryName>
       <MkTypLibCompatible>true</MkTypLibCompatible>
       <TargetEnvironment>Win32</TargetEnvironment>
     </Midl>
@@ -245,14 +245,14 @@
     </ResourceCompile>
     <Bscmake>
       <SuppressStartupBanner>true</SuppressStartupBanner>
-      <OutputFile>.\..\release\client_effects.bsc</OutputFile>
+      <OutputFile>.\..\release\clientfx.bsc</OutputFile>
     </Bscmake>
     <Link>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <LinkDLL>true</LinkDLL>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
-      <OutputFile>..\..\build\base\client_effects.dll</OutputFile>
+      <OutputFile>..\..\build\base\clientfx.dll</OutputFile>
       <AdditionalDependencies>H2Common.lib;quake2.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(SolutionDir)..\build\</AdditionalLibraryDirectories>
     </Link>

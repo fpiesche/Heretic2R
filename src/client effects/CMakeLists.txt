@@ -1,4 +1,6 @@
-set(CLIENTFX_LIBRARY_NAME "client_effects")
+cmake_minimum_required(VERSION 3.22)
+
+set(CLIENTFX_LIBRARY_NAME "clientfx")
 file(GLOB CLIENTFX_SOURCE_FILES
 	${CMAKE_CURRENT_SOURCE_DIR}/*.c
     ${CMAKE_CURRENT_SOURCE_DIR}/../qcommon/anorms.c
@@ -9,9 +11,11 @@ file(GLOB CLIENTFX_SOURCE_FILES
 
 add_library(${CLIENTFX_LIBRARY_NAME} ${CLIENTFX_SOURCE_FILES})
 target_include_directories(${CLIENTFX_LIBRARY_NAME} PRIVATE
-	${CMAKE_CURRENT_SOURCE_DIR}
+	${CMAKE_CURRENT_SOURCE_DIR}/../game
 	${CMAKE_CURRENT_SOURCE_DIR}/../qcommon
 )
+
+message(STATUS "Building client effects shared library ${CLIENTFX_LIBRARY_NAME}${CMAKE_SHARED_LIBRARY_SUFFIX}")
 
 if(WIN32)
 	set(CLIENTFX_INSTALL_DEST ${CMAKE_INSTALL_BINDIR})
