@@ -1,3 +1,5 @@
+cmake_minimum_required(VERSION 3.22)
+
 set(LAUNCHER_NAME "Heretic2R")
 file(GLOB LAUNCHER_SOURCE_FILES
 	${CMAKE_CURRENT_SOURCE_DIR}/*.c
@@ -10,6 +12,12 @@ if(WIN32)
 endif()
 
 add_executable(${LAUNCHER_NAME} ${LAUNCHER_SOURCE_FILES})
+target_include_directories(${LAUNCHER_NAME} PRIVATE
+	${CMAKE_CURRENT_SOURCE_DIR}/../win32
+	${CMAKE_CURRENT_SOURCE_DIR}/../qcommon
+)
+
+message(STATUS "Building launcher ${LAUNCHER_NAME}${CMAKE_EXECUTABLE_SUFFIX}")
 
 set(LAUNCHER_INSTALL_DEST ${CMAKE_INSTALL_BINDIR})
 install(TARGETS ${LAUNCHER_NAME}
