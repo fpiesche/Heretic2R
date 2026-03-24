@@ -1,0 +1,48 @@
+---
+name: Build
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+  pull_request:
+    types:
+      - opened
+      - edited
+      - synchronize
+      - closed
+
+jobs:
+  build:
+    name: Build site frontend
+    runs-on: ${{ matrix.platform }}
+
+    strategy:
+      fail-fast: false
+      matrix:
+        platform:
+          # - macos-latest
+          # - ubuntu-latest
+          - windows-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          ref: ${{ github.ref }}
+
+      - name: Add msbuild to PATH
+        if: ${{ matrix.platform == "windows-latest" }}
+        uses: microsoft/setup-msbuild@v3
+
+      - name: Build
+        if: ${{ matrix.platform == "windows-latest" }}
+        run: |
+          msbuild src\Heretic2R.sln -verbosity:diag -property:Configuration=Release Platform=Win32
+          pack_release.bat
+
+      - name: Upload build dir as artifact
+        uses: actions/upload-artifact@v7
+        with:
+          path: .\release\Heretic2R_*.zip
+          retention-days: 1
