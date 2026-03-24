@@ -1207,7 +1207,7 @@ static void CL_InitLocal(void)
 	EAX_preset = Cvar_Get("EAX_preset", "0", 0);
 	EAX_default = Cvar_Get("EAX_default", "0", 0);
 	quake_amount = Cvar_Get("quake_amount", "0.0", 0);
-	cl_fx_dll = Cvar_Get("cl_fx_dll", "Client Effects", 0);
+	cl_fx_dll = Cvar_Get("cl_fx_dll", "client_effects", 0);
 	cl_cinematicfreeze = Cvar_Get("cl_cinematicfreeze", "0", 0);
 	sc_framerate = Cvar_Get("sc_framerate", "20", CVAR_ARCHIVE); // H2_1.07: "20" -> "60".
 	show_splash_movies = Cvar_Get("show_splash_movies", "1", CVAR_ARCHIVE); //mxd

@@ -361,7 +361,7 @@ void CL_UnloadClientEffects(void)
 {
 	fxe.ShutDown();
 	ResMngr_Des(&fx_buffer_manager);
-	Sys_UnloadGameDll("Client Effects", &clfx_library);
+	Sys_UnloadGameDll("client_effects", &clfx_library);
 	memset(&fxe, 0, sizeof(fxe));
 
 	fxapi_initialized = false;

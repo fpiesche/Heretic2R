@@ -26,7 +26,7 @@ void CLFX_LoadDll(void)
 	HMODULE dll_handle;
 	DWORD checksum;
 
-	const cvar_t* fx_dll = Cvar_Get("cl_fx_dll", "Client Effects", 0);
+	const cvar_t* fx_dll = Cvar_Get("cl_fx_dll", "client_effects", 0);
 	Sys_LoadGameDll(fx_dll->string, &dll_handle, &checksum);
 
 	GetfxAPI = (GetfxAPI_t)GetProcAddress(dll_handle, "GetfxAPI");
