@@ -1,4 +1,4 @@
-/build/**
+build/**
 /release
 /lib/*.exp
 /lib/*.lib
@@ -25,3 +25,5 @@
 /src/WinSnd/debug
 /src/WinSnd/release
 *.user
+
+.vscode
